@@ -12,18 +12,48 @@ class App extends Component {
 
   placeAddedHandler = placeName => {
     this.props.onAddPlace(placeName);
+    console.log('Place Added');
+    // this.setState(prevState => {
+    //   return {
+    //     places: prevState.places.concat({
+    //       key: Math.random(), 
+    //       value: placeName,
+    //       image: {
+    //         uri: "https://c1.staticflickr.com/5/4096/4744241983_34023bf303_b.jpg"
+    //       }
+    //     })
+    //   };
+    // });
   };
 
   placeDeletedHandler = () => {
     this.props.onDeletePlace();
+    // this.setState(prevState => {
+    //   return {
+    //     places: prevState.places.filter( place => {
+    //       return place.key !== prevState.selectedPlace.key
+    //     }),
+    //     selectedPlace: null
+    //   };
+    // });
   };
 
   modalClosedHandler = () => {
     this.props.onDeselectPlace();
+    // this.setState({
+    //   selectedPlace: null
+    // });
   };
 
   placeSelectedHandler = key => {
     this.props.onSelectPalce(key);
+    // this.setState(prevState => {
+    //   return {
+    //     selectedPlace: prevState.places.find(place => {
+    //       return place.key === key;
+    //     })
+    //   };
+    // });
   };
 
   render() {
